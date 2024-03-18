@@ -1,0 +1,37 @@
+<!-- Navigation Bar -->
+<nav *ngIf="user" class="bg-blue flex-row fixed w-full z-20 top-0 left-0">
+
+  <!-- Navigation Content -->
+  <div class="flex flex-wrap justify-between mx-auto max-w-screen-xl p-4">
+
+    <!-- Logo and Title -->
+    <a class="flex items-center">
+      <img class="h-14 mr-4"
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/6b6d9a9f269d2e5a2859e65f162aafff1087d8e6/sprites/pokemon/other/dream-world/25.svg"
+        alt="Pikachu" />
+      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Pokemon trainer</span>
+    </a>
+
+    <!-- Navigation Buttons -->
+    <div *ngIf="user" class="flex items-center">
+
+      <!-- Trainer Button -->
+      <button type="button" routerLink="/trainer" routerLinkActive="font-bold"
+        class="text-white px-4 py-2 rounded hover:font-semibold">
+        Trainer
+      </button>
+
+      <!-- Catalog Button -->
+      <button type="button" routerLink="/catalog" routerLinkActive="font-bold"
+        class="text-white px-4 py-2 rounded hover:font-semibold">
+        Catalog
+      </button>
+
+      <!-- Log Out Button -->
+      <button *ngIf="user" type="button"
+        class="bg-yellow text-dark-brown px-4 py-2 rounded hover:bg-orange font-semibold" (click)="logout()">
+        Log Out
+      </button>
+    </div>
+  </div>
+</nav>

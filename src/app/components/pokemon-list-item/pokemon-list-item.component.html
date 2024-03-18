@@ -1,0 +1,20 @@
+<li *ngIf="pokemon" class="p-3 relative text-center max-w-sm rounded overflow-hidden shadow-lg bg-white">
+
+  <!--Pokemon name-->
+  <h5 class="border-b-light-grey border-b-2 font-bold text-xl mb-2">
+    {{ capitalizeFirstLetter(pokemon.name) }}
+  </h5>
+
+  <!--Pokemon image-->
+  <img class="h-48 w-full object-cover md:h-full md:w-48" [src]="getPokemonImageUrl(pokemon.url)"
+    alt="{{ pokemon.name }}" />
+
+  <!--Collect and delete button depending on current page-->
+  <ng-container *ngIf="isCatalogPage; else deleteButton">
+    <app-collect-button [pokemonName]="pokemon.name"></app-collect-button>
+  </ng-container>
+  <ng-template #deleteButton>
+    <app-remove-button [pokemonName]="pokemon.name"> </app-remove-button>
+  </ng-template>
+
+</li>

@@ -1,0 +1,21 @@
+<!-- Button for catching pokemon with styling depended on state and collected-variable -->
+<button (click)="onCollectClick()" type="button" [class.bg-yellow]="!collected" [class.hover:bg-opacity-75]="!collected"
+    [class.focus:bg-light-grey]="!collected" [class.bg-grey]="collected" [class.cursor-not-allowed]="collected"
+    [attr.disabled]="collected ? true : null" class="justify-center w-full text-gray font-bold py-2 px-4 rounded inline-flex items-center shadow-lg
+     active:bg-gray-400 active:grayscale active" data-te-ripple-init data-te-ripple-color="light">
+
+    <!-- When collected display check-symbol and change text content-->
+    <ng-container *ngIf="collected; else notCollected; ">
+        <img class="fill-current w-8 h-8 mr-2 " src=" ../../../assets/verified.png">
+        Caught
+    </ng-container>
+
+    <!-- When not collected Display Poke Ball image and text content-->
+    <ng-template #notCollected>
+
+        <img class="fill-current w-8 h-8 mr-2 {{ collected ? 'grayscale' : '' }}"
+            src="https://github.com/PokeAPI/sprites/blob/master/sprites/items/dream-world/poke-ball.png?raw=true">
+        Catch
+    </ng-template>
+
+</button>

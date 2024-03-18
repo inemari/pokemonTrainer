@@ -1,0 +1,5 @@
+<ul class="flex flex-wrap justify-around items-start">
+    <app-pokemon-list-item class="p-5 mt-4" *ngFor="let pokemon of pokemons" [pokemon]="pokemon"
+        [isCatalogPage]="isCatalogPage">
+    </app-pokemon-list-item>
+</ul>

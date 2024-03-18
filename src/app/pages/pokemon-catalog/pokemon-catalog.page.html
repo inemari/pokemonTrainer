@@ -1,0 +1,11 @@
+<app-header>
+
+    <h1 class="tracking-tight text-3xl text-white font-extrabold mr-4">Pokemon Catalog</h1>
+    <img class="h-32 bg-transparent "
+        src="https://raw.githubusercontent.com/PokeAPI/sprites/6b6d9a9f269d2e5a2859e65f162aafff1087d8e6/sprites/pokemon/other/dream-world/4.svg"
+        alt="Charmander" />
+</app-header>
+
+
+<p *ngIf="loading ">Loading pokemon</p>
+<app-pokemon-list [isCatalogPage]="true" [pokemons]="pokemons"></app-pokemon-list>
